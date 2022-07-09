@@ -28,11 +28,14 @@ const Counter = () => {
     <div className="container my-5">
       <div className="card text-center my-5">
         <div className="card-body">
-          <h1>Masbaha12</h1>
+          <h1>Masbaha</h1>
           <div className="my-5">
             <h2 className="my-5">Count: {getCount}</h2>
             <button className="btn btn-success mx-3" onClick={onIncrement}>
               Increment
+            </button>
+            <button>
+              Decrement
             </button>
             <button className="btn btn-secondary mx-3" onClick={onReset}>
               Reset
