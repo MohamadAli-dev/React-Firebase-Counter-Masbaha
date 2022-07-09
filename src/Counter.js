@@ -34,9 +34,6 @@ const Counter = () => {
             <button className="btn btn-success mx-3" onClick={onIncrement}>
               Increment
             </button>
-            <button>
-              Decrement
-            </button>
             <button className="btn btn-secondary mx-3" onClick={onReset}>
               Reset
             </button>
