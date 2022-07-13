@@ -5,11 +5,19 @@ const Counter = () => {
   const [count, setCount] = useState(0)
 
   const onIncrement = () => {
-    setCount((prevCount) => {
-      const newCount = Number(prevCount) + 1
+    setCount((count) => {
+      const newCount = Number(count) + 1
       localStorage.setItem('count', newCount)
       return newCount
     })
+  }
+
+  const onDecrement = () => {
+      setCount((count) => {
+        const newCount = Number(count) - 1
+        localStorage.setItem('count', newCount)
+        return newCount
+      })
   }
 
   const onReset = () => {
@@ -22,25 +30,56 @@ const Counter = () => {
     if (initialValue) setCount(initialValue)
   }, [])
 
-  const getCount = localStorage.getItem('count')
+  const getCount = localStorage.getItem('count') || 0
 
   return (
+
     <div className="container my-5">
-      <div className="card text-center my-5">
+      <div className="d-flex justify-content-center mb-3">
+        <button
+          className="btn btn-danger decrement"
+          onClick={onDecrement}
+          disabled={count === 0}
+          style={{ cursor: 'pointer' }}
+        >
+          تصغير العدادات
+        </button>
+      </div>
+
+      <div className="card text-center border border-primary">
+        <div className="border-bottom bg-secondary bg-opacity-10">
+          <h1 className="my-5">سبحان اللّه</h1>
+        </div>
+
         <div className="card-body">
-          <h1>Masbaha</h1>
-          <div className="my-5">
-            <h2 className="my-5">Count: {getCount}</h2>
-            <button className="btn btn-success mx-3" onClick={onIncrement}>
-              Increment
-            </button>
-            <button className="btn btn-secondary mx-3" onClick={onReset}>
-              Reset
+          <div className="d-flex justify-content-end">
+            <button className="btn btn-danger" onClick={onReset}>
+              <i className="fas fa-undo" style={{ fontSize: "30px" }}></i>
             </button>
           </div>
+
+          <div className="mb-5 d-flex justify-content-center">
+            <div className="rounded-circle d-flex align-items-center justify-content-center"
+              style={{
+                width: '230px',
+                height: '240px',
+                backgroundColor: '#0060ff',
+                cursor: 'pointer'
+              }}
+              onClick={onIncrement}
+            >
+              <h2 className="mb-3 mt-2" style={{
+                fontSize: '5em',
+                color: 'white'
+              }}>
+                {getCount}
+              </h2>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
