@@ -61,8 +61,8 @@ const Counter = () => {
           <div className="mb-5 d-flex justify-content-center">
             <div className="rounded-circle d-flex align-items-center justify-content-center"
               style={{
-                width: '230px',
-                height: '240px',
+                width: '260px',
+                height: '280px',
                 backgroundColor: '#0060ff',
                 cursor: 'pointer'
               }}
