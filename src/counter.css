@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    margin-bottom: 1em;
+}
+
+.container {
+    padding: 10px;
+}
+
+.header-text {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.box-card {
+    padding: 0 !important;
+}
+
+.increment-btn {
+    width: 130px;
+    height: 130px;
+    background-color: #0076ff;
+    cursor: pointer;
+}
+
+.increment-btn:hover {
+    background-color: #0060ff;
+}
+
+.reset-counter {
+    position: absolute;
+    right: 4px;
+}
